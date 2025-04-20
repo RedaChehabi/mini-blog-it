@@ -5,6 +5,11 @@
 @section('header', 'Éditer l\'article')
 
 @section('content')
+<div class="container">
+    <div class="alert alert-info">
+        <b>Mode administration</b> - Cet espace est protégé par un middleware
+    </div>
+    <h1 class="mb-4">Modifier l'article #{{ $article['id'] }} </h1>
     <div class="card">
         <div class="card-body">
             <form method="POST" action="#">
@@ -71,3 +76,5 @@
             </form>
         </div>
     </div>
+</div>
+@endsection

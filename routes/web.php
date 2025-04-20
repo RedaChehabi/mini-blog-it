@@ -14,6 +14,8 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/articles', [ArticleController::class, 'index'])->name('admin.articles.index');
     Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('admin.articles.show');
     Route::get('/articles/{id}/edit', [ArticleController::class, 'edit'])->name('admin.articles.edit');
+    Route::put('/admin/articles/{id}', [ArticleController::class, 'update'])
+        ->name('admin.articles.update');
 });
 
 Route::fallback(function () {

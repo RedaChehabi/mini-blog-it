@@ -2,19 +2,19 @@
 
 @section('title', 'Gestion des articles')
 
-@section('header', 'Gestion des articles')
-
 @section('content')
     <div class="container">
+        <div class="alert alert-info">
+            <b>Mode administration</b> - Cet espace est protégé par un middleware
+        </div>
+        <h1 class="mb-4">Gestion des articles</h1>
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h2 class="mb-0">Gestion des articles</h2>
+                <h2 class="mb-0">Liste des articles</h2>
             </div>
 
             <div class="card-body">
-                <div class="alert alert-info">
-                    Cet espace est protégé par un middleware
-                </div>
+
 
                 <table class="table table-striped table-hover">
                     <thead class="table-dark">
@@ -41,11 +41,11 @@
                                 <td>{{ date('d/m/Y', strtotime($article['published_at'])) }}</td>
                                 <td>
                                     <div class="d-flex gap-2">
-                                        <a href="{{ route('admin.articles.show', $article['id']) }}"
+                                        <a href="{{ route('admin.articles.show', $article['id']) }}?admin=1"
                                             class="btn btn-sm btn-info">
                                             Voir
                                         </a>
-                                        <a href="{{ route('admin.articles.edit', $article['id']) }}"
+                                        <a href="{{ route('admin.articles.edit', $article['id']) }}?admin=1"
                                             class="btn btn-sm btn-warning">
                                             Modifier
                                         </a>

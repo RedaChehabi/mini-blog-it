@@ -9,21 +9,22 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-black shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{{ route('home') }}">Mini Blog IT</a>
+            <a class="navbar-brand fw-bold text-light" href="{{ route('home') }}">Mini Blog IT</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse text-light" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Articles</a>
+                        <a class="nav-link text-light" href="{{ route('home') }}">Articles</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown">
                             Catégories
                         </a>
                         <ul class="dropdown-menu">
@@ -37,7 +38,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('blog.about') }}">À propos</a>
+                        <a class="nav-link text-light" href="{{ route('blog.about') }}">À propos</a>
                     </li>
                 </ul>
 
@@ -47,12 +48,20 @@
             </div>
         </div>
     </nav>
-
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <main class="container my-5 flex-grow-1">
         @yield('content')
     </main>
 
-    <footer class="bg-light text-center py-3 mt-auto">
+    <footer class="bg-black text-center text-light py-3 mt-auto">
         <div class="container">
             © 2025 Mini Blog IT - Tous droits réservés
         </div>

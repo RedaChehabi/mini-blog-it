@@ -9,7 +9,8 @@
         <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">{{ $article['title'] }}</h5>
-                <a href="{{ route('admin.articles.edit', $article['id']) }}" class="btn btn-sm btn-primary">Éditer</a>
+                <a href="{{ route('admin.articles.edit', $article['id']) }}?admin=1"
+                    class="btn btn-sm btn-primary">Éditer</a>
             </div>
         </div>
         <div class="card-body">
@@ -47,10 +48,10 @@
     </div>
 
     <div class="mt-4">
-        <a href="{{ route('admin.articles.index') }}" class="btn btn-outline-secondary">
+        <a href="{{ route('admin.articles.index') }}?admin=1" class="btn btn-outline-secondary">
             &larr; Retour à la liste
         </a>
-        <a href="{{ route('blog.show', $article['slug']) }}" class="btn btn-outline-info ms-2" target="_blank">
+        <a href="{{ route('blog.show', $article['slug']) }}?admin=1" class="btn btn-outline-info ms-2" target="_blank">
             Voir sur le site
         </a>
     </div>

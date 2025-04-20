@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between">
-                    <a href="{{ route('admin.articles.show', $article['id']) }}" class="btn btn-outline-secondary">Annuler</a>
+                    <a href="{{ route('admin.articles.show', $article['id']) }}?admin=1" class="btn btn-outline-secondary">Annuler</a>
                     <button type="submit" class="btn btn-primary">Sauvegarder</button>
                 </div>
             </form>
